@@ -42,16 +42,6 @@ function deleteNote(index) {
   });
 }
 
-function addNote(noteText) {
-  chrome.storage.local.get({ notes: [] }, (result) => {
-    const notes = result.notes;
-    notes.push(noteText);
-    chrome.storage.local.set({ notes }, () => {
-      displayNotes();
-    });
-  });
-}
-
 document.addEventListener("DOMContentLoaded", displayNotes);
 
 document.getElementById("randomEmojiButton").addEventListener("click", () => {
