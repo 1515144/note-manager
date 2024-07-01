@@ -1,0 +1,23 @@
+{
+    "name": "Notes Manager",
+    "description": "Manage your notes directly on the web page",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting"
+    ]
+  }
